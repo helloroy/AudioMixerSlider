@@ -78,7 +78,7 @@ public class AudioMixerSlider : MonoBehaviour
     }
     private float V2Db(float v)
     {
-        return 20 * Mathf.Log10(Mathf.Clamp(v, 0.000001f, 10f));
+        return 20 * Mathf.Log10(Mathf.Clamp(v, 0.000001f, 1f));
     }
     #endregion
 
