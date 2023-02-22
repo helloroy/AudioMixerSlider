@@ -7,4 +7,4 @@ Component to update AudioMixer exposed parameter value with Slider, optional to 
 1. Add Exposed Parameter (https://youtu.be/9tqi1aXlcpE?t=40)
 2. Add AudioMixerSlider component to your existed Slider
 3. Drop AudioMixer to AudioMixerSlider
-4. Fill in Exposed Parameter name (step 2) to AudioMixerSlider
+4. Fill in Exposed Parameter name (step 1) to AudioMixerSlider
