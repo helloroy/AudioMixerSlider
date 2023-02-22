@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+[HelpURL("https://github.com/helloroy/AudioMixerSlider")]
 [RequireComponent(typeof(Slider))]
 public class AudioMixerSlider : MonoBehaviour
 {
