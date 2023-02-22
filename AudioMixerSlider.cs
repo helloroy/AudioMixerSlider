@@ -22,7 +22,7 @@ public class AudioMixerSlider : MonoBehaviour
     private Slider slider;
 
     [System.Serializable]
-    public enum Unit
+    private enum Unit
     {
         Decibel, Voltage
     }
