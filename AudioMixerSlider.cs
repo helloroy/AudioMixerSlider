@@ -38,26 +38,26 @@ public class AudioMixerSlider : MonoBehaviour
 
     private void Start()
     {
-        if (enablePlayerPrefs) Load();
+        var db = Slider2Db(slider.value);
+        audioMixer.SetFloat(exposedParameter, Slider2Db(slider.value));
+        if (enablePlayerPrefs)
+        {
+            db = PlayerPrefs.GetFloat("AudioMixerSlider" + exposedParameter, db);
+            slider.value = Db2Slider(db);
+        }
     }
 
-    private void Save()
+    private void Save(float db)
     {
-        audioMixer.GetFloat(exposedParameter, out float db);
         PlayerPrefs.SetFloat("AudioMixerSlider" + exposedParameter, db);
-    }
-
-    private void Load()
-    {
-        var db = PlayerPrefs.GetFloat("AudioMixerSlider" + exposedParameter);
-        var result = audioMixer.SetFloat(exposedParameter, db);
-        slider.value = Db2Slider(db);
+        //Debug.Log($"Saved to PlayerPrefs: AudioMixerSlider{exposedParameter} = {db}", gameObject);
     }
 
     private void UpdateMixer(float value)
     {
-        audioMixer.SetFloat(exposedParameter, Slider2Db(value));
-        if (enablePlayerPrefs) Save();
+        var db = Slider2Db(value);
+        audioMixer.SetFloat(exposedParameter, db);
+        if (enablePlayerPrefs) Save(db);
     }
 
     private float Db2Slider(float value)
